@@ -1,0 +1,18 @@
+{
+    "openapi": "1.0.0",
+    "info": {
+        "title": "User Local",
+        "description": "A place to admin an User",
+        "version": "1.0.0",
+        "contact": {
+            "email": "eduardo@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {},
+            "patch": {},
+            "get": {}
+        }
+    }
+}

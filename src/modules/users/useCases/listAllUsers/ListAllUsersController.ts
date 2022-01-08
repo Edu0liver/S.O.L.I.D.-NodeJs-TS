@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Request, Response } from "express";
 
 import { ListAllUsersUseCase } from "./ListAllUsersUseCase";
@@ -7,6 +8,14 @@ class ListAllUsersController {
 
   handle(request: Request, response: Response): Response {
     // Complete aqui
+    const { user_id } = request.params;
+
+    try{
+    const users = this.listAllUsersUseCase.execute({user_id});
+    return response.status(200).json({users});
+    }catch{
+      return response.status(400).json({error: "Necessário ser administrador para acessar a lista de usuários!"});
+    }
   }
 }
 
